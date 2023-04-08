@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    background-color: white;
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  kbd {
+    color: #121212;
+  }
+</style>
+<title>CS 184 Mesh Edit</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+</head>
+
+<body>
+
+<h1 align="middle">CIKAQ: Using a Custom Inverse Kinematics Model to Animate a Quadruped Robot Dog Gait Modeled as a set of Continuous Bezier Curves Via Interpolation</h1>
+
+<br><br>
+
+<h2>Team Members:</h2>
+<p>Adham Elarabawy, aelarabawy@berkeley.edu, 3035703969</p>
+<p>Miguel Nepomuceno, mignepo@berkeley.edu, 3033874887</p>
+<p>David Kim, ykimdavid@berkeley.edu, 3032735370</p>
+<p>Tracy Xia, tracyxia@berkeley.edu, </p>
+
+<br>
+
+<h2>Summary:</h2>
+<p>In this project, we plan to compute an inverse kinematics model of a 2-degree-of-freedom robot leg. Additionally, we plan to model a single foot path of the robot leg as a set of continuous bezier curves. We will then interpolate through the foot path to obtain foot positions, which will then be passed through the inverse kinematics model in order to compute the angles of each joint in the robot leg, which we can then visualize in order to show how the robot leg moves through the foot path! There are many applications of topics we’ve learned about through class (inverse kinematics, interpolation, etc), and many variables to play with (limb lengths, interpolation methods, the bezier curve defining the foot path, etc…).</p>
+
+<br>
+
+<h2>Problem Description:</h2>
+<p>In this project, we are attempting to build the computational foundation for the theory behind a robot dog. Making a stable, robust, and working robot dog is an active research problem, evidenced by many of the world’s premier research + robotics labs investing resources into it. As described in the summary, we are trying to demonstrate the theory behind modulating a robot dog pose through topics we’ve learned about in class (and a plethora of other skills that we’ll have to pick up along the way). It will be challenging to do this in the time allotted, since we have to span multiple layers of abstraction in our journey. For example, we will have to figure out the mathematical model behind a robot leg gait, whilst at the same time having to figure out how to animate this and the right platform to use to visualize our results via a programmatic interface. Just as in research, at every step along the way, there will be multiple decisions and variables that we can change, and we will have to maneuver bringing all of them in convergence to make a working animation of a mathematically-sound model of a robot log gait.</p>
+
+<br>
+<h2>Goals and Deliverables</h2>
+<h3>What we plan to accomplish:</h3>
+<ol>
+    <li>A sound mathematical inverse-kinematics model of a 2d robot leg (2 joints)</li>
+    <ul>
+        <li>Given an xy position, the model should either return (1) the angles that the robot leg joints must achieve OR (2) if the robot leg cannot reach the desired xy position</li>
+    </ul>
+    <li>2D environment to show the robot leg </li>
+    <ul>
+        <li>Maybe a rudimentary jupyter notebook demonstrating the model, to allow us to try out inputs and see the outputs in a matplotlib plot</li>
+        <li>Determining what the best platform is to do the animation (Figuring out how to do this via openGL or something like it)</li>
+        <li>An environment where we can input joint angles, and see the output leg position</li>
+    </ul>
+    <li>Modeling the foot path as a set of bezier curves</li>
+    <li>Sampling the foot path bezier curve via interpolation technique.</li>
+    <li>An interactive environment where we can modulate limb lengths, foot path speed, key foot path parameters, etc and see the visual result.</li>
+</ol>
+<h3>What we hope to accomplish:</h3>
+<ol>
+    <li>Experimenting with different types of interpolations of the foot path.</li>
+    <li>An investigation into how we can handle offsets and more complicated robot leg designs.</li>
+    <li>A brief analysis of different ways to encode the foot path (is a set of bezier curves the right solution?).</li>
+    <li>How to extend this into 3D?</li>
+    <li>Can we use inverse kinematics on the body-level to figure out how to make the body twist and turn?</li>
+</ol>
+
+<br>
+<h2>Schedule</h2>
+<h4>Week 1: 4/9 - 4/15</h4>
+<ul>
+    <li>Model: Research proper dynamical model to use, familiarize with inverse kinematics applications/theory</li>
+    <li>Visualization: jupyter notebook to test inputs, determine animation platform</li>
+</ul>
+<h4>Week 2: 4/16 - 4/15</h4>
+<ul>
+    <li>Model: Have draft of model (deliverable 1), attempt integration with visual environment.</li>
+    <li>Visualization: Have preliminary environment GUI, be able to easily construct bezier curves to pass into model</li>
+</ul>
+<h4>Week 3: 4/23 - 5/1 (Milestone due 4/25)</h4>
+<ul>
+    <li>Milestone Video</li>
+    <li>Milestone Report (Paper Format)</li>
+    <li>Work on full integration in later half of the week, debugging, and reach goals</li>
+</ul>
+<h4>Week 4: 5/2 - 5/4 (Presentation and Final Deliverables Due)</h4>
+
+<br>
+
+<h2>Resources</h2>
+<h4>Inverse Kinematics:</h4>
+<ul>
+    <li><a href="https://cs184.eecs.berkeley.edu/sp23/lecture/18/intro-to-physical-simulation">Intro to physical simulation</a></li>
+    <li><a href="https://medium.com/geekculture/inverse-kinematics-solver-in-c-e999f1b7f353">Inverse Kinematics Solver in C++</a></li>
+    <li><a href="https://sme-chinoises-euronext.typepad.fr/artbot/2014/09/a-study-of-walking-in-order-to-design-a-biped-robot.html">Walking Gait for Humans</a></li>
+    <li><a href="https://sci-hub.ru/https://doi.org/10.2460/ajvr.2003.64.609">Walking Gait for Dogs</a></li>
+    <li>Inverse Kinematics Solvers:
+        <ul>
+        <li><a href="http://andreasaristidou.com/FABRIK.html">FABRIK</a></li>
+        <li><a href="https://www.mathworks.com/help/robotics/ref/inversekinematics-system-object.html">Inverse Kinematics System Object (Mathworks)</a></li>
+        </ul>
+    </li>
+    <li><a href="https://medium.com/geekculture/inverse-kinematics-solver-in-c-e999f1b7f353">C++ implementation using DH Parameters on a 3-link robot arm</a></li>
+    <li><a href="https://www.ijstr.org/final-print/sep2017/Inverse-Kinematic-Analysis-Of-A-Quadruped-Robot.pdf">Matlab implementation of 4-leg dog</a></li>
+    <li><a href="https://www.youtube.com/watch?v=3s2x4QsD3uM&t=51s">Visual Explanation of 6-DOF system</a></li>
+    <li><a href="https://www.youtube.com/watch?v=JveN4g8hOHQ">Sick James Bruton Video</a></li>
+</ul>
+</body>
